@@ -1,0 +1,16 @@
+{
+  "name": "Caobianco SST",
+  "short_name": "Caobianco SST",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b3759",
+  "theme_color": "#0b3759",
+  "icons": [
+    {
+      "src": "src/img/logo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
