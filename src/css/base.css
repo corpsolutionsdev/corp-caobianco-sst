@@ -1,7 +1,7 @@
 :root {
   color-scheme: light;
-  --primary: #0b3759;
-  --secondary: #acd69e;
+  --primary: #0f2a4d;
+  --secondary: #4eb724;
   --text: #ffffff;
   --muted: rgba(255, 255, 255, 0.75);
   --bg: #f5f7fa;
@@ -39,7 +39,7 @@ body::before {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  filter: blur(1px);
+  filter: blur(3px);
 }
 
 img {
@@ -203,7 +203,7 @@ body.nav-open {
   gap: 48px;
   align-items: center;
   width: 100%;
-  padding: 100px 0 60px;
+  padding: 70px 0 60px;
   position: relative;
   z-index: 1;
   justify-items: center;
@@ -248,22 +248,21 @@ body.nav-open {
 }
 
 .hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px 16px;
   margin-top: 18px;
   justify-content: center;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-tags span {
-  font-size: 0.85rem;
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  padding: 6px 12px;
-  border-radius: 999px;
-  backdrop-filter: blur(6px);
+  color: var(--secondary);
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
 
 .hero-actions {
@@ -299,6 +298,23 @@ body.nav-open {
   color: #fff;
 }
 
+.contact-card .btn-primary,
+.hero .btn-primary {
+  padding: 16px 32px;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  background: linear-gradient(135deg, rgba(15, 42, 77, 0.95), rgba(78, 183, 36, 0.75));
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 10px 24px rgba(5, 20, 35, 0.35);
+}
+
+.contact-card .btn-primary:hover,
+.hero .btn-primary:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 32px rgba(5, 20, 35, 0.45);
+  background: linear-gradient(135deg, rgba(15, 42, 77, 1), rgba(78, 183, 36, 0.9));
+}
+
 .btn-outline {
   border-color: rgba(255, 255, 255, 0.7);
   color: #ffffff;
@@ -309,10 +325,6 @@ body.nav-open {
   border-color: rgba(255, 255, 255, 0.8);
   color: #ffffff;
   background: rgba(255, 255, 255, 0.08);
-}
-
-.hero .btn-primary {
-  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .pulse {
@@ -370,6 +382,12 @@ body.nav-open {
   outline: 1px solid rgba(172, 214, 158, 0.5);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(11, 55, 89, 0.28);
 }
 
 .team-grid {
@@ -390,6 +408,12 @@ body.nav-open {
   text-align: center;
   backdrop-filter: blur(10px);
   max-width: 360px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(11, 55, 89, 0.3);
 }
 
 .team-card img {
@@ -433,11 +457,14 @@ body.nav-open {
   width: 290px;
   min-height: 320px;
   color: #ffffff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .service-card:hover {
   background-image: linear-gradient(rgba(4, 32, 54, 0.884), rgba(3, 24, 41, 0.945)),
     var(--service-bg);
+  transform: translateY(-8px);
+  box-shadow: 0 22px 50px rgba(11, 55, 89, 0.35);
 }
 
 .service-card-center {
@@ -510,6 +537,12 @@ body.nav-open {
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.cta-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(11, 55, 89, 0.28);
 }
 
 .cta-card .section-label {
@@ -696,6 +729,7 @@ body.nav-open {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    filter: blur(3px);
   }
 
   .hero {
@@ -754,6 +788,19 @@ body.nav-open {
     text-align: center;
     margin: 0 auto;
     max-width: 100%;
+  }
+
+  .hero-tags {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    max-width: 320px;
+  }
+
+  .hero-tags span {
+    display: list-item;
+    list-style: disc;
+    list-style-position: inside;
   }
 
   .cta-card {
