@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://caobiancosst.com.br/sitemap.xml
+Host: caobiancoconsultoria.com.br
+Sitemap: http://caobiancoconsultoria.com.br/sitemap.xml
